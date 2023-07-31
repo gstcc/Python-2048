@@ -1,4 +1,5 @@
 import pygame
+from game_logic import check_high_score, read_high_score
 
 # Define colors (RGB format)
 WHITE = (255, 255, 255)
@@ -27,7 +28,7 @@ def draw_board(screen, board, tile_size, font):
     score_bar_rect = pygame.Rect(0, 400, screen.get_width(), 50)
     pygame.draw.rect(screen, SCORE_BAR_COLOR, score_bar_rect)
 
-    score_text = font.render(f"Score: {0}  Highest: {100}", True, BLACK)
+    score_text = font.render(f"Score: {check_high_score(board)}  Highest: {read_high_score()}", True, BLACK)
     score_text_rect = score_text.get_rect(center=(screen.get_width() // 2, tile_size * 4 + 25))
     screen.blit(score_text, score_text_rect)
 

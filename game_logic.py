@@ -58,7 +58,10 @@ def is_game_over(board):
     for row in transpose(board):
         if 2048 in row:
             return True
-    return not any(0 in row for row in board)
+    
+    moves = [move_left, move_right, move_down, move_up]
+    
+    return not any(0 in row for row in board) and not any([move(board) for move in moves])
 
 def display_board(board):
     clear_screen()
@@ -99,6 +102,5 @@ def check_high_score(board):
         total_score += sum(row)
     if (total_score > read_high_score()):
         write_high_score(total_score)
-    print(total_score)
     return total_score
     
