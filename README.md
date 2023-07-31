@@ -1,6 +1,6 @@
 # 2048 Game - Python Project
 
-![2048 Game]
+![2048 Game](https://i.imgur.com/UDpB33R.png)
 
 This project is an implementation of the popular 2048 game in Python using the Pygame library for graphical user interface (GUI) rendering. The game's objective is to slide numbered tiles on a grid to combine them and create a tile with the number 2048.
 
